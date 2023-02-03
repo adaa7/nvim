@@ -1,6 +1,11 @@
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+  use "lewis6991/impatient.nvim" -- Speed up loading Lua modules    TODO: figure out how to use this
+  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
+  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+  use "rcarriga/nvim-notify" -- notify
+  use "kyazdani42/nvim-web-devicons" -- icons
   --vim-airline状态栏
   use {
         "vim-airline/vim-airline",
@@ -28,7 +33,6 @@ use {
 -- 加速文件搜索速度,如果安装失败需要到插件目录执行make命令手动编译
 -- 用了这个插件以后，貌似更快了(感觉输入更跟手了，可能是心理作用)。
 use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"} 
-
 -- 显示css的颜色代码的颜色
 use "ap/vim-css-color"
 -- 符号自动匹配，比如：输入(自动闭合）
@@ -41,8 +45,7 @@ use "windwp/nvim-autopairs"
 --彩虹括号
 use 'luochen1990/rainbow'
 --注释插件
-use "b3nj5m1n/kommentary"
-
+use "terrortylor/nvim-comment"
 --开场UI
 use("glepnir/dashboard-nvim")
 --jsx注释
@@ -52,17 +55,38 @@ use("lukas-reineke/indent-blankline.nvim")
 use("tami5/lspsaga.nvim" ) -- 新增
 --跳行
 use 'ggandor/leap.nvim'
-
-
+--自动跳转到最后一次打开的位置
+use "ethanholz/nvim-lastplace" -- auto return back to the last modified positon when open a file
+--vim终端
+use "akinsho/toggleterm.nvim" -- toggle terminal
+--实时显示颜色
+use "norcalli/nvim-colorizer.lua" -- show color
+--翻译单词
+use "voldikss/vim-translator"
+-- Debugger
+use "ravenxrz/DAPInstall.nvim" -- help us install several debuggers
+use {
+  "ravenxrz/nvim-dap",
+  -- commit = "f9480362549e2b50a8616fe4530deaabbc4f889b",
+}
+use "theHamsta/nvim-dap-virtual-text"
+use "rcarriga/nvim-dap-ui"
+-- use "mfussenegger/nvim-dap-python"    -- debug python
+-- use { "leoluz/nvim-dap-go", module = "dap-go" } -- debug golang
+use { "jbyuki/one-small-step-for-vimkind", module = "osv" } -- debug any Lua code running in a Neovim instance
+use {
+  "ravenxrz/nvim-gdb",
+  run = "./install.sh"
+}
 
 
 ------------------------------------------
 ---------------LSP------------------------
 ------------------------------------------
   --Nvim LSP 客户端的快速入门配置
+use "neovim/nvim-lspconfig"
 use 'williamboman/nvim-lsp-installer'
 use { "williamboman/mason.nvim" }
-use "neovim/nvim-lspconfig"
 use {
 "hrsh7th/nvim-cmp",
 requires = {
@@ -78,6 +102,7 @@ requires = {
 "hrsh7th/cmp-emoji", --输入: 可以显示表情
 }
 }
+use "ray-x/lsp_signature.nvim" -- show function signature when typing
 -- 自动为尚不支持 Neovim 0.5 内置 lsp 客户端的配色方案创建缺少的 LSP 诊断突出显示组。
 use "folke/lsp-colors.nvim"
 -- 基于neovim 内置lsp 的轻量级lsp 插件，具有高性能UI。非常酷
