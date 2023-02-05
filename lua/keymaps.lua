@@ -11,6 +11,22 @@ vim.keymap.set({'x', 'o', 'n'}, 'F', '<Plug>(leap-backward-to)')
 vim.keymap.set({'x', 'o', 'n'}, 'gf', '<Plug>(leap-cross-window)')
 
 map("n", "<C-n>", "<ESC>:w<CR>:split<CR>:te gcc -std=c11 -Wshadow -Wall -o %:t:r.out % -g  && time ./%:t:r.out<CR>i", opt)
+
+-- debug
+map("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint(); require'lua.dap.dap-util'.store_breakpoints(true)<cr>", opt)
+map("n", "<leader>dB", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<cr>", opt)
+-- keymap("n", "<leader>dr", "lua require'dap'.repl.open()<cr>", opts)
+map("n", "<F9>", "<cmd>lua require'dap'.run_last()<cr>", opt)
+map('n', '<F10>', '<cmd>lua require"lua.dap.dap-util".reload_continue()<CR>', opt)
+map("n", "<F4>", "<cmd>lua require'dap'.terminate()<cr>", opt)
+map("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>", opt)
+map("n", "<F6>", "<cmd>lua require'dap'.step_over()<cr>", opt)
+map("n", "<F7>", "<cmd>lua require'dap'.step_into()<cr>", opt)
+map("n", "<F8>", "<cmd>lua require'dap'.step_out()<cr>", opt)
+map("n", "K", "<cmd>lua require'dapui'.eval()<cr>", opt)
+-- keymap("n", "<leader>dt", "<cmd>lua require'dapui'.toggle()<cr>", opts)
+-- keymap("n", "<leader>dx", "<cmd>lua require'dap'.terminate()<cr>", opts)
+
 -- nvim-tree
 -- alt + m 键打开关闭tree
 map("n", "<leader>e", ":NvimTreeToggle<CR>", opt)

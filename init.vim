@@ -8,6 +8,7 @@ lua require('plugins')
 lua require('nvim-tree')
 lua require('dashboard')
 lua require('nvim-lastplace')
+lua require('dap.dap-run')
 " 按键映射 
 runtime ./maps.vim
 "加载优先级
