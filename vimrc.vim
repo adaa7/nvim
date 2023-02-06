@@ -2,8 +2,8 @@
 set encoding=UTF-8
 " leader设置成空格
 let mapleader=" "
-" 使用鼠标 启用a
-set mouse=c
+" 使用鼠标 启用a/c
+set mouse=a
 " 显示行号
 set nu
 " 相对行号

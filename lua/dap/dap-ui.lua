@@ -19,32 +19,24 @@ dapui.setup({
     {
       elements = {
         'scopes',
+		'breakpoints',
+		'watches',
       },
-      size = 40,
+      size = 28,
       position = 'left',
-    },
-    {
-      elements = {
-        -- 'stacks',
-        'breakpoints',
-        'watches',
-      },
-      size = 40,
-      position = 'right',
     },
     {
       elements = {
         'console',
       },
-      size = 5,
-      position = 'top',
+      size = 10,
+      position = 'bottom',
     },
-    {
-      elements = {
+    {      elements = {
         'repl',
       },
-      size = 12,
-      position = 'bottom',
+      size = 25,
+      position = 'right',
     },
   },
   -- sidebar = {
