@@ -4,7 +4,7 @@ return require('packer').startup(function(use)
   use "lewis6991/impatient.nvim" -- Speed up loading Lua modules    TODO: figure out how to use this
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-  use "rcarriga/nvim-notify" -- notify
+  --use "rcarriga/nvim-notify" -- notify
   use "kyazdani42/nvim-web-devicons" -- icons
   --vim-airline状态栏
   use {

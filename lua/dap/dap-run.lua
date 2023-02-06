@@ -1,5 +1,4 @@
-require('lua.dap.dap-config').setup()
-require('lua.dap.dap-ui')
-require('lua.dap.dap-util')
-require('lua.dap.dap-virtual-text')
-
+require('dap.dap-config').setup()
+require('dap.dap-ui')
+require('dap.dap-util')
+require('dap.dap-virtual-text')

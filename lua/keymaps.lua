@@ -13,11 +13,11 @@ vim.keymap.set({'x', 'o', 'n'}, 'gf', '<Plug>(leap-cross-window)')
 map("n", "<C-n>", "<ESC>:w<CR>:split<CR>:te gcc -std=c11 -Wshadow -Wall -o %:t:r.out % -g  && time ./%:t:r.out<CR>i", opt)
 
 -- debug
-map("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint(); require'lua.dap.dap-util'.store_breakpoints(true)<cr>", opt)
+map("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint(); require'dap.dap-util'.store_breakpoints(true)<cr>", opt)
 map("n", "<leader>dB", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<cr>", opt)
 -- keymap("n", "<leader>dr", "lua require'dap'.repl.open()<cr>", opts)
 map("n", "<F9>", "<cmd>lua require'dap'.run_last()<cr>", opt)
-map('n', '<F10>', '<cmd>lua require"lua.dap.dap-util".reload_continue()<CR>', opt)
+map('n', '<F10>', '<cmd>lua require"dap.dap-util".reload_continue()<CR>', opt)
 map("n", "<F4>", "<cmd>lua require'dap'.terminate()<cr>", opt)
 map("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>", opt)
 map("n", "<F6>", "<cmd>lua require'dap'.step_over()<cr>", opt)
